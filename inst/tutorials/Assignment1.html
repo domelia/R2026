@@ -165,9 +165,9 @@ class(grade)</code></pre>
 </div>
 <div id="section-упражнение-2" class="section level3">
 <h3>Упражнение 2</h3>
-<p>Создайте переменную <code>a</code> и присвойте ей значения в виде
-выражения суммы чисел 2,56 и 3,48 (Помните, что в R разделитель запятой
-- это точка). Проверьте, является ли данная переменная числовой.</p>
+<p>Создайте переменную <code>a</code> и присвойте ей значение в виде
+суммы чисел 2,56 и 3,48 (Помните, что в R разделитель запятой - это
+точка). Проверьте, является ли данная переменная числовой.</p>
 <div class="tutorial-exercise" data-label="ex2" data-completion="1"
 data-diagnostics="1" data-startover="1" data-lines="0"
 data-pipe="|&gt;">
@@ -286,7 +286,7 @@ data-pipe="|&gt;">
 data-completion="1" data-diagnostics="1" data-startover="1"
 data-lines="0" data-pipe="|&gt;">
 <pre class="text"><code>set.seed(123)
-l&lt;-list(v, a)
+l&lt;-list(a, v)
 l</code></pre>
 </div>
 </div>
@@ -404,6 +404,7 @@ Download HTML
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(gradethis)
+library(tutorial.helpers)
 knitr::opts_chunk$set(echo = FALSE)
 gradethis_setup(
   pass = "Молодец!",
@@ -433,7 +434,7 @@ session$onSessionEnded(function() {
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "name", question = structure("Фамилия, имя:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_b3c6130", 
+"character")), answers = list(structure(list(id = "lnr_ans_d6fb840", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -442,7 +443,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "name-answer", 
     question = "name"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 1881323710.12394, options = list(
+    allow_retry = TRUE, seed = 1545810841.28018, options = list(
         placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
@@ -450,7 +451,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "ID", question = structure("Группа:", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_2ccdde7", 
+"character")), answers = list(structure(list(id = "lnr_ans_89fb4a1", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -459,7 +460,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "ID-answer", question = "ID"), 
     loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 683463803.681737, options = list(placeholder = "Enter answer here...", 
+    seed = 1958182651.08815, options = list(placeholder = "Enter answer here...", 
         trim = TRUE)), class = c("learnr_text", "tutorial_question"
 )), session = session)
 </script>
@@ -474,7 +475,7 @@ output$`tutorial-exercise-ex1-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex1", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex1", code = "#Напишите свой код здесь\n", 
@@ -520,7 +521,7 @@ output$`tutorial-exercise-ex2-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex2", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex2", code = "#Напишите свой код здесь\n", 
@@ -562,7 +563,7 @@ output$`tutorial-exercise-ex3-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex3", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex3", code = "set.seed(123)\n#Напишите свой код здесь", 
@@ -606,7 +607,7 @@ output$`tutorial-exercise-ex4-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex4", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex4", code = "", opts = list(
@@ -649,7 +650,7 @@ output$`tutorial-exercise-ex5-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex5", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex5", code = "", opts = list(
@@ -692,7 +693,7 @@ output$`tutorial-exercise-ex6-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex6", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex6", code = "set.seed(123)\n#Напишите свой код здесь\n", 
@@ -736,7 +737,7 @@ output$`tutorial-exercise-ex7-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex7", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = "set.seed(123)\n#Напишите свой код здесь\n", 
     chunks = list(list(label = "ex6", code = "set.seed(123)\n#Напишите свой код здесь\n", 
@@ -782,7 +783,7 @@ output$`tutorial-exercise-ex8-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex8", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = "set.seed(123)\n#Напишите свой код здесь\n\n#Напишите свой код здесь\n", 
     chunks = list(list(label = "ex6", code = "set.seed(123)\n#Напишите свой код здесь\n", 
@@ -795,7 +796,7 @@ learnr:::store_exercise_cache(structure(list(label = "ex8", global_setup = struc
                 exercise.setup = "\"ex7\""), engine = "r")), 
     code_check = structure("grade_code()", chunk_opts = list(
         label = "ex8-code-check")), error_check = NULL, check = NULL, 
-    solution = structure(c("set.seed(123)", "l<-list(v, a)", 
+    solution = structure(c("set.seed(123)", "l<-list(a, v)", 
     "l"), chunk_opts = list(label = "ex8-solution")), tests = NULL, 
     options = list(eval = FALSE, echo = TRUE, results = "markup", 
         tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
@@ -832,7 +833,7 @@ output$`tutorial-exercise-ex9-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex9", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex9", code = "#Напишите свой код здесь", 
@@ -874,7 +875,7 @@ output$`tutorial-exercise-ex10-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex10", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex10", code = "#Напишите свой код здесь", 
@@ -917,7 +918,7 @@ output$`tutorial-exercise-ex11-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex11", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex11", code = "data <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)\nA <- matrix(data, ncol=3, nrow=3, byrow = T)", 
@@ -961,7 +962,7 @@ output$`tutorial-exercise-ex12-output` <- renderUI({
 
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::store_exercise_cache(structure(list(label = "ex12", global_setup = structure(c("library(learnr)", 
-"library(gradethis)", "knitr::opts_chunk$set(echo = FALSE)", 
+"library(gradethis)", "library(tutorial.helpers)", "knitr::opts_chunk$set(echo = FALSE)", 
 "gradethis_setup(", "  pass = \"Молодец!\",", "  fail = \"Дурак\")", 
 ""), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
     chunks = list(list(label = "ex12", code = "df<- data.frame(a = c(1:4), b = c(\"red\",\"yellow\",\"green\",\"white\"), c = rnorm(4, mean=0, sd = 1))\n", 
@@ -996,7 +997,7 @@ learnr:::store_exercise_cache(structure(list(label = "ex12", global_setup = stru
  
 <script type="application/shiny-prerendered" data-context="server">
 learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", label = "minutes", question = structure("Сколько по времени в минутах у Вас потребовало выполнение данного урока (например, 45)", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8046c0f", 
+"character")), answers = list(structure(list(id = "lnr_ans_78ddb36", 
     option = character(0), value = NULL, label = NULL, correct = TRUE, 
     message = NULL, type = "literal"), class = c("tutorial_question_answer", 
 "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
@@ -1005,7 +1006,7 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_numeric", labe
 "character")), try_again = NULL, incorrect = NULL, message = NULL, 
     post_message = NULL), ids = list(answer = "minutes-answer", 
     question = "minutes"), loading = NULL, random_answer_order = FALSE, 
-    allow_retry = TRUE, seed = 800688892.12715, options = list(
+    allow_retry = TRUE, seed = 1244893303.9203, options = list(
         min = 0, max = 360, step = 1, tolerance = 1.5e-08)), class = c("learnr_numeric", 
 "tutorial_question")), session = session)
 </script>
