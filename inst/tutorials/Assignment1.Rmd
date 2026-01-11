@@ -1,0 +1,237 @@
+---
+title: "Основные типы и структуры данных в R"
+output: 
+  learnr::tutorial:
+    language: ru.json
+runtime: shiny_prerendered
+
+---
+```{r setup-locale, include=FALSE}
+Sys.setenv(LANGUAGE = "ru_RU.UTF-8")
+Sys.setlocale("LC_ALL", "Russian")
+```
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+knitr::opts_chunk$set(echo = FALSE)
+gradethis_setup(
+  pass = "Молодец!",
+  fail = "Дурак")
+
+```
+
+##
+
+```{r info-section, child = system.file("child_documents/info_section.Rmd", package = "tutorial.helpers")}
+```
+
+## Самостоятельная работа №1
+
+### Упражнение 1
+
+Создайте переменную `gradе`, содержащую четыре значения : `low`, `high`, `middle` и `high`. Затем преобразуйте ее в факторную порядковую с тремя уровнями -`low`, `middle` и `high` и проверьте ее класс. Помните про кавычки!
+
+```{r ex1, exercise = TRUE}
+#Напишите свой код здесь
+
+```
+
+```{r ex1-solution}
+# without ordered ----
+grade<-c("low", "high", "middle", "high")
+grade <- factor(grade, levels=c("low", "middle", "high"))
+class(grade)
+
+# with ordered ----
+grade<-c("low", "high", "middle", "high")
+grade <- factor(grade, order=TRUE, levels=c("low", "middle", "high"))
+class(grade)
+```
+
+```{r ex1-code-check}
+grade_code()
+```
+
+### Упражнение 2
+
+Создайте переменную `a` и присвойте ей значения в виде выражения суммы чисел 2,56 и 3,48 (Помните, что в R разделитель запятой - это точка). Проверьте, является ли данная переменная числовой.
+
+```{r ex2, exercise = TRUE}
+#Напишите свой код здесь
+
+```
+```{r ex2-solution}
+a<-2.56+3.48
+is.numeric(a)
+```
+```{r ex2-code-check}
+grade_code()
+```
+
+### Упражнение 3
+
+Создайте пустую строковую переменную `x`. Проверьте, является ли `x` строковой переменной.
+
+```{r ex3, exercise = TRUE}
+set.seed(123)
+#Напишите свой код здесь
+```
+```{r ex3-solution}
+set.seed(123)
+x<-character()
+is.character(x)
+```
+```{r ex3-code-check}
+grade_code()
+```
+
+
+### Упражнение 4
+
+Создайте переменную `g` и сохраните в нее текст "Алтайский государственный университет - один из крупнейших вузов Сибири". Посчитайте количество символов в данном тексте.
+
+```{r ex4, exercise = TRUE}
+
+```
+```{r ex4-solution}
+g<-"Алтайский государственный университет - один из крупнейших вузов Сибири"
+nchar(g)
+```
+```{r ex4-code-check}
+grade_code()
+```
+
+### Упражнение 5
+
+Создайте переменную `name`, в которую сохраните имя *Александр Сергеевич Пушкин*. Разделите его на отдельные слова - имя, отчество, фамилия, используя в качестве разделителя знак пробела. 
+
+```{r ex5, exercise = TRUE}
+
+```
+```{r ex5-solution}
+name<-"Александр Сергеевич Пушкин"
+strsplit(name, " ") 
+```
+```{r ex5-code-check}
+grade_code()
+```
+
+
+### Упражнение 6
+
+Создайте вектор `v`, в котором содержатся 10 случайных чисел  в диапазоне от -100 до +100.
+
+```{r ex6, exercise = TRUE}
+set.seed(123)
+#Напишите свой код здесь
+
+```
+```{r ex6-solution}
+set.seed(123)
+v<-runif(10, min = -100, max = 100)
+```
+```{r ex6-code-check}
+grade_code()
+```
+
+### Упражнение 7
+
+Создайте массив (array) `a` с двумя матрицами 5 × 5, в которых содержались бы числа от 1 до 25. **Код должен содержать одну строчку!**
+
+```{r ex7, exercise = TRUE, exercise.setup="ex6"}
+#Напишите свой код здесь
+
+```
+```{r ex7-solution}
+a<-array(data=1:25, dim=c(5,5,2))
+```
+```{r ex7-code-check}
+grade_code()
+```
+
+### Упражнение 8
+
+Создайте список (list) `l` и поместите в него объекты `a` и `v`. Сколько элементов получилось? Отобразите список. 
+
+```{r ex8, exercise = TRUE, exercise.setup="ex7"}
+set.seed(123)
+#Напишите свой код здесь
+```
+```{r ex8-solution}
+set.seed(123)
+l<-list(v, a)
+l
+```
+```{r ex8-code-check}
+grade_code()
+```
+
+
+### Упражнение 9
+
+Создайте пустой числовой вектор `a`, содержащий 10 элементов:
+
+```{r ex9, exercise = TRUE}
+#Напишите свой код здесь
+```
+```{r ex9-solution}
+a<-numeric(10)
+```
+```{r ex9-code-check}
+grade_code()
+```
+
+### Упражнение 10
+
+Создайте два вектора - `a` и `b`, в первом - числа от 1 до 10, во втором от 11 до 20. Перемножьте два вектора, сохранив результат в третьем векторе `c`. Выведите на экран вектор `с` с помощью функции `print()`. 
+
+```{r ex10, exercise = TRUE}
+#Напишите свой код здесь
+```
+```{r ex10-solution}
+a<-1:10
+b<-11:20
+c<-a*b
+print(c)
+```
+```{r ex10-code-check}
+grade_code()
+```
+
+### Упражнение 11
+
+Измените код так, чтобы количество строк стало равным 5, столбцов 2, и заполнение матрицы было бы по умолчанию, то есть по столбцам:
+
+```{r ex11, exercise = TRUE}
+data <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+A <- matrix(data, ncol=3, nrow=3, byrow = T)
+```
+```{r ex11-solution}
+data <- c(1, 2, 3, 4, 5, 6, 7, 8, 9)
+A <- matrix(data, ncol=2, nrow=5)
+```
+```{r ex11-code-check}
+grade_code()
+```
+
+### Упражнение 12
+
+У вас есть датафрейм `df` с данными. Добавьте в него переменную `d` и запишите в нее значения переменной `c`, умноженные на 4.   
+```{r ex12, exercise = TRUE}
+df<- data.frame(a = c(1:4), b = c("red","yellow","green","white"), c = rnorm(4, mean=0, sd = 1))
+
+```
+```{r ex12-solution}
+df<- data.frame(a = c(1:4), b = c("red","yellow","green","white"), c = rnorm(4, mean=0, sd = 1))
+df$d<-df$c*4
+```
+```{r ex12-code-check}
+grade_code()
+```
+
+
+```{r download-answers, child = system.file("child_documents/download_answers.Rmd", package = "tutorial.helpers")}
+```
+
